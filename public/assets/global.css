@@ -1,0 +1,315 @@
+@import url(//fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300|Kaushan+Script);
+.visible-ie-only {
+  display: none !important;
+}
+
+body[data-browser="ie"] .visible-ie-only {
+  display: block !important;
+}
+body[data-browser="ie"] .hidden-ie {
+  display: none !important;
+}
+
+/* --------------------------------
+
+	Bootstrap media query variables
+
+---------------------------------*/
+/*----------------------------------
+
+	use like:
+	@media only screen and (min-width : 992px) and (max-width : 1199px) { 
+
+	}
+
+ ----------------------------------*/
+@media only screen and (min-width: 992px) {
+  .fivecolumns .col-md-2, .fivecolumns .col-lg-2 {
+    width: 20% !important;
+    *width: 20% !important;
+  }
+}
+
+ /* --------------------------------
+
+	View-specific selectors
+
+---------------------------------*/
+body:not(.no-global) h1 {
+  font-size: 30px;
+}
+body:not(.no-global) h2 {
+  font-size: 22px;
+}
+body:not(.no-global) h3 {
+  font-size: 16px;
+}
+body:not(.no-global) h1, body:not(.no-global) h2, body:not(.no-global) h3, body:not(.no-global) h4, body:not(.no-global) h5, body:not(.no-global) h6, body:not(.no-global) p, body:not(.no-global) span, body:not(.no-global) a, body:not(.no-global) ul, body:not(.no-global) li, body:not(.no-global) td, body:not(.no-global) th, body:not(.no-global) .table tr td, body:not(.no-global) .table tr th {
+  font-family: open sans;
+}
+body:not(.no-global) .btn.btn-danger {
+  color: white;
+}
+body:not(.no-global) i.hide {
+  display: none;
+}
+body:not(.no-global) .auto-width {
+  width: auto;
+}
+body:not(.no-global) .clear {
+  clear: left;
+}
+body:not(.no-global) p.alert {
+  width: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 0 auto 1em;
+  float: none;
+  font-family: open sans;
+  font-size: 1.2em;
+  position: relative;
+  display: block;
+}
+body:not(.no-global) p.alert a.alert-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+body:not(.no-global) form.ka-form {
+  background-image: image-url("backgrounds/billie_holiday_2.png");
+  padding: 2em;
+  border-radius: 10px;
+  overflow: hidden;
+}
+body:not(.no-global) form.ka-form a {
+  color: #0d81ba;
+}
+body:not(.no-global) form.ka-form label {
+  font-family: open sans;
+  float: left;
+  font-size: 1.1em;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 600;
+}
+body:not(.no-global) form.ka-form input[type=checkbox] {
+  float: left;
+  margin: .1em 0 0 1em;
+}
+body:not(.no-global) form.ka-form .form-group {
+  margin-bottom: 1.5em;
+  float: left;
+  clear: both;
+  width: 100%;
+}
+body:not(.no-global) form.ka-form .form-group:last-child {
+  margin: 0;
+}
+body:not(.no-global) .parsley-error-list {
+  float: left;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: .5em 0 0 0;
+}
+body:not(.no-global) .parsley-error-list li {
+  float: left;
+  clear: both;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  padding: .5em 1em;
+  background: rgba(255, 0, 0, 0.2);
+}
+body:not(.no-global) .parsley-error-list li:not(:first-child) {
+  margin: .5em 0 0 0;
+}
+body:not(.no-global) .breadcrumbs {
+  float: left;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.05);
+  border-bottom: 0;
+  padding: .7em 1em;
+  width: 100%;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.04);
+  position: relative;
+  font-size: 1.1em;
+}
+body:not(.no-global) .breadcrumbs a {
+  color: #d33040 !important;
+}
+body:not(.no-global) .crumb-container {
+  padding: 0;
+}
+body:not(.no-global) .crumb-page {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+body:not(.no-global) .table th, body:not(.no-global) .table-condensed th {
+  font-size: 14px;
+  padding: .6em .8em !important;
+}
+body:not(.no-global) .table td, body:not(.no-global) .table-condensed td {
+  font-size: 13px;
+}
+body:not(.no-global) .table td a, body:not(.no-global) .table-condensed td a {
+  color: #0d81ba;
+}
+body:not(.no-global) .btn-success {
+  color: white !important;
+}
+body:not(.no-global) body, body:not(.no-global) div, body:not(.no-global) .row, body:not(.no-global) .col-md-*, body:not(.no-global) .span* {
+  box-sizing: border-box;
+}
+body:not(.no-global) .padding-10 {
+  padding: 10px;
+}
+body:not(.no-global) .padding-20 {
+  padding: 20px;
+}
+body:not(.no-global) .padding-30 {
+  padding: 30px;
+}
+body:not(.no-global) .center {
+  text-align: center;
+}
+body:not(.no-global) .center div[class*='col-'] {
+  margin: 0 auto;
+  text-align: left;
+  float: none;
+}
+body:not(.no-global) .row {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+body:not(.no-global) .row div.page {
+  text-align: left;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  float: none;
+}
+body:not(.no-global) .main-row {
+  background-image: image-url("backgrounds/ricepaper-1.png");
+  padding: 5em 0 2em;
+  min-height: 700px;
+}
+body:not(.no-global) table th {
+  background: #333333 !important;
+  color: white;
+  font-family: open sans;
+  font-weight: 600;
+  border: 0 !important;
+}
+body:not(.no-global) table th:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+body:not(.no-global) table th:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+body:not(.no-global) table th, body:not(.no-global) table td {
+  padding-left: .7em !important;
+  padding-right: .7em !important;
+}
+body:not(.no-global) table tr:nth-child(2) td {
+  border-top: none !important;
+}
+body:not(.no-global) nav {
+  height: auto;
+  min-height: 42px !important;
+}
+body:not(.no-global) nav.navbar-top {
+  position: absolute;
+  top: 0;
+  border-radius: 0;
+  width: 100%;
+}
+body:not(.no-global) nav p, body:not(.no-global) nav p.navbar-text {
+  margin: .8em;
+}
+body:not(.no-global) nav .user-info {
+  padding: .8em 0 .3em;
+  font-family: open sans;
+  color: rgba(255, 255, 255, 0.5);
+  float: left;
+}
+body:not(.no-global) nav .user-info .gravatar_img {
+  border-radius: 100px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  margin: -.25em .5em auto;
+}
+body:not(.no-global) nav .user-info strong {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+body:not(.no-global) nav a.logo-block {
+  margin: .9em 0 0;
+  float: left;
+}
+body:not(.no-global) nav a.logo-block span.logo {
+  color: #f55261;
+  background: rgba(255, 255, 255, 0.13);
+  font-family: roboto condensed;
+  text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  font-weight: 700;
+  line-height: 1em;
+  font-size: 1.3em;
+  padding: .1em .5em;
+}
+body:not(.no-global) nav a.logo-block span.logo-text {
+  color: #999;
+  font-family: kaushan script;
+  text-shadow: -1px 1px 1px rgba(0, 0, 0, 0.1);
+  line-height: 1em;
+  font-size: 1.3em;
+  padding: .2em .5em;
+}
+body:not(.no-global) nav a.logo-block:hover {
+  text-decoration: none;
+}
+body:not(.no-global) nav a.logo-block:hover span.logo {
+  background: rgba(255, 255, 255, 0.16);
+}
+body:not(.no-global) nav a.logo-block:hover span.logo-text {
+  color: #bbb;
+}
+
+#image-modal {
+  display: none;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 99999;
+}
+#image-modal iframe {
+  width: 100%;
+  display: none;
+  border: 0;
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.1);
+  height: 400px;
+}
+#image-modal .modal-dialog {
+  width: 100%;
+  text-align: center;
+  position: fixed;
+}
+#image-modal .modal-dialog .modal-content {
+  width: 90%;
+  margin: 0 auto;
+  float: none;
+}
+#image-modal .modal-dialog .modal-content .modal-header {
+  overflow: hidden;
+}
+#image-modal .modal-dialog .modal-content .modal-header h4 {
+  float: left;
+}
+#image-modal .modal-dialog .modal-content .modal-header button {
+  float: right;
+}

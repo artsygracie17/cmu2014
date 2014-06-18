@@ -1,0 +1,279 @@
+.v-option-manager hr, .v-option-manager h2, .v-option-manager h3 {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+.v-option-manager .clip {
+  text-align: justify;
+  font-size: 1.3em;
+}
+.v-option-manager .clip span {
+  font-size: 1.2em;
+}
+.v-option-manager .inactive-this {
+  opacity: 0.20;
+  filter: alpha(opacity=20);
+  /* For IE8 and earlier */
+}
+.v-option-manager .seed span.token {
+  cursor: pointer;
+}
+.v-option-manager span.token.keyword {
+  background: lightblue;
+}
+.v-option-manager .seed {
+  background: #fffff0;
+  min-height: 92px;
+  border-top: solid 4px;
+  padding-top: 3px;
+}
+.v-option-manager .seed_tabs .seed {
+  background: #fffff0;
+  min-height: 92px;
+  border-top: solid 0px !important;
+  border-left: solid 4px;
+  padding-top: 0px !important;
+  padding-left: 3px;
+}
+.v-option-manager .cluster:nth-child(1) .seed.clip {
+  border-color: lightgreen;
+}
+.v-option-manager .cluster:nth-child(2) .seed.clip {
+  border-color: orange;
+}
+.v-option-manager .cluster:nth-child(3) .seed.clip {
+  border-color: lightblue;
+}
+.v-option-manager .cluster:nth-child(4) .seed.clip {
+  border-color: pink;
+}
+.v-option-manager .fa-times {
+  cursor: pointer;
+  color: red;
+  font-size: 1.4em;
+}
+.v-option-manager .fa-times a {
+  color: red !important;
+}
+.v-option-manager .fa-check {
+  cursor: pointer;
+  color: blue;
+  font-size: 1.4em;
+}
+.v-option-manager .fa-check a {
+  color: blue !important;
+}
+.v-option-manager .add-clip-container {
+  padding-left: 0px !important;
+  text-align: left;
+}
+.v-option-manager .add-clip-disabled {
+  opacity: 0.15;
+  filter: alpha(opacity=15);
+  /* For IE8 and earlier */
+}
+.v-option-manager .stats {
+  color: darkgreen;
+  font-size: 0.8em;
+  text-align: right;
+  padding-right: 0px !important;
+}
+.v-option-manager .seed_tabs, .v-option-manager .clip_list {
+  overflow: scroll;
+}
+.v-option-manager .inactive-seed {
+  height: 92px;
+  overflow: hidden;
+  opacity: 0.30;
+  filter: alpha(opacity=30);
+  /* For IE8 and earlier */
+  cursor: pointer;
+}
+
+.instructions {
+  text-align: left;
+  font-size: 1.1em;
+}
+
+body.v-option-manager, body.v-option-manager-2 {
+  height: 100%;
+  overflow: hidden;
+}
+
+.v-option-manager-2 h2 {
+  margin: 5px !important;
+}
+.v-option-manager-2 .show-all {
+  cursor: pointer;
+}
+.v-option-manager-2 .drop-zone {
+  background: #dcf3ae;
+}
+.v-option-manager-2 body {
+  overflow: hidden;
+  color: darkgrey;
+  background: #fafafa;
+}
+.v-option-manager-2 .clips, .v-option-manager-2 .clusters, .v-option-manager-2 .merger, .v-option-manager-2 .showall {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 5px;
+  padding-bottom: 20px;
+}
+.v-option-manager-2 .showall .clip {
+  border-bottom: 1px solid darkgrey;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-top: 0px;
+}
+.v-option-manager-2 .clips {
+  border: 0px;
+}
+.v-option-manager-2 .clips .clip {
+  margin-bottom: 16px;
+}
+.v-option-manager-2 .clip {
+  background: white;
+  min-height: 70px;
+  padding: 4px;
+  z-index: 100 !important;
+  border: 1px solid darkgrey;
+  padding: 10px;
+}
+.v-option-manager-2 .clip.draggable {
+  background: #fff6cb !important;
+  cursor: move;
+  overflow: hidden;
+}
+.v-option-manager-2 .cluster {
+  padding: 10px;
+  margin-bottom: 16px;
+  background: #fafafa;
+  border: lightgray 2px solid;
+  border-radius: 4px;
+}
+.v-option-manager-2 .cluster .blah {
+  color: darkgrey;
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+.v-option-manager-2 .cluster .clip {
+  margin-bottom: 0px !important;
+}
+.v-option-manager-2 .cluster.trash {
+  background: lightgrey;
+  border-radius: 10px;
+}
+.v-option-manager-2 .cluster.create {
+  background: #d4ebf2;
+  border-radius: 10px;
+}
+.v-option-manager-2 .cluster.trash, .v-option-manager-2 .cluster.create {
+  border: 0px black solid;
+}
+.v-option-manager-2 .cluster.trash .clip, .v-option-manager-2 .cluster.create .clip {
+  min-height: 48px;
+  max-height: 48px;
+  border: 0px;
+}
+.v-option-manager-2 .cluster.trash .cluster-clips, .v-option-manager-2 .cluster.create .cluster-clips {
+  min-height: 48px;
+  background: #dcf3ae;
+}
+.v-option-manager-2 .cluster.trash .selector, .v-option-manager-2 .cluster.create .selector {
+  margin-left: 2px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: 1.0em;
+}
+.v-option-manager-2 .cluster-clips {
+  min-height: 70px;
+  background: #dcf3ae;
+}
+.v-option-manager-2 .selector {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.v-option-manager-2 .selector i {
+  margin-right: 4px;
+  padding-right: 4px;
+}
+.v-option-manager-2 .selector .fa-circle.draggable, .v-option-manager-2 .selector .fa-circle-o.draggable {
+  cursor: pointer;
+  color: #fed400 !important;
+}
+.v-option-manager-2 .selector .fa-circle, .v-option-manager-2 .selector .fa-circle-o {
+  cursor: pointer;
+  color: darkgray;
+}
+.v-option-manager-2 .tab-pane {
+  padding-top: 20px;
+}
+.v-option-manager-2 .input-group {
+  margin-bottom: 4px;
+}
+.v-option-manager-2 .selector {
+  margin-left: 10px;
+  font-size: 1.2em;
+}
+.v-option-manager-2 .placeholder-row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+.v-option-manager-2 .merger-wrapper {
+  min-height: 140px !important;
+  position: relative;
+}
+.v-option-manager-2 .merge-placeholder {
+  position: absolute;
+  min-height: 140px !important;
+  width: 100%;
+  z-index: 999;
+  border-radius: 10px;
+  border: 0px;
+}
+.v-option-manager-2 .merger-wrapper .cluster {
+  position: absolute;
+  min-height: 140px;
+  width: 100%;
+}
+.v-option-manager-2 .background {
+  border-radius: 10px;
+  position: absolute;
+  text-align: center;
+  padding-top: 60px;
+  min-height: 140px;
+  width: 100%;
+  color: silver;
+  font-size: 3.6em;
+  font-family: "Arial Black", Gadget, sans-serif;
+  background: lightgray;
+  z-index: 1;
+}
+.v-option-manager-2 .state-hover {
+  background: rgba(255, 165, 0, 0.6) !important;
+}
+.v-option-manager-2 .state-active {
+  background: rgba(220, 243, 174, 0.6);
+}
+.v-option-manager-2 .cluster-clips .ui-sortable-placeholder {
+  max-height: 0px !important;
+  display: none !important;
+}
+.v-option-manager-2 .gone {
+  display: none !important;
+}
+.v-option-manager-2 .merge-handle {
+  cursor: move;
+  border: 1px solid darkgrey;
+  padding: 3px;
+  border-radius: 4px;
+  background: white;
+}
+.v-option-manager-2 .merge-handle:hover {
+  background: #dcf3ae;
+}
+.v-option-manager-2 .scrollto, .v-option-manager-2 .scrolltop {
+  margin: 3px;
+}

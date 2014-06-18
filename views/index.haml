@@ -1,0 +1,125 @@
+!!! 5
+%html
+  %head
+    %title Option Manager - Phase 2
+    %meta{name:"viewport", content:"width=device-width, initial-scale=1.0"}
+    %script{src: "//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"}
+    %link{href: "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css", rel: "stylesheet"}
+    %script{src: "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"}
+    %link{href: "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", rel: "stylesheet"}
+    %script{src: "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"}
+    %link{href: "//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", rel: "stylesheet"}
+    %script{src:'/assets/jquery.ui.sortable.hotfix.js'}
+    %script{src:'/assets/jquery.blockUI.js'}
+    %script{src:'/assets/jquery.scrollTo.min.js'}
+    %link{href: "/assets/global.css", rel: "stylesheet"}
+    %link{href: "/assets/main.css", rel: "stylesheet"}
+    %script{src:'/assets/main.js'}
+  %body.v-option-manager-2
+    #main-container.container-fluid
+      .header
+        .row
+          .title.col-xs-12
+            %h2
+              = title
+        .row
+          .col-xs-2
+            %button.btn.btn-success.start-stage.pull-left
+              Start
+            %button.btn.btn-info.next-stage.pull-left
+              Continue to Next Step
+          .title.col-xs-8
+            %h2
+              Please help us organize them into groups of different solution types.
+          .col-xs-2
+            %button.btn.btn-danger.restart-hit.pull-right
+              Restart HIT
+        %hr
+        .row
+          .instructions.col-xs-12
+            %span.stage.stage-1
+              %h2
+                Step1 of 2. Name existing clusters:
+                Read the clips in the clusters, and name each cluster. If you think two clusters should be merged, drag them to the right and click \"Merge\".
+            %span.stage.stage-2
+              %h2
+                Step2 of 2. Categorize clips:
+                Drag clips into the clusters on the left. Create new clusters if necessary. There might be a number of useless clips that contain little information. Drag them into the trash. 
+        %hr
+      .workspace
+        .col-xs-6
+          .pills-container
+            .pills
+              %button.btn.btn-default.btn-xs.scrolltop{type: 'button'}
+                Top
+            %hr
+          .clusters
+            .cluster.trash.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.trash
+                .clip{"data-cid":-1}
+                  Trash Bin: Drag useless clips here.
+            .cluster.create.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.create
+                .clip{"data-cid":-1}
+                  Drag clips here to create a new cluster.
+            - each cluster in clusters
+              .cluster{id: getUUID()}
+                .blah
+                  %span.blah
+                    View Clip:
+                  %span.selector
+                    - each clip in cluster['clips']
+                      %i.fa.fa-circle-o.dot{"data-cid":clip[0]}
+                  %a.show-all{src: '#'}
+                    %i.fa.fa-angle-double-down
+                      Show All
+                  %i.fa.fa-arrows.merge-handle.pull-right
+                    Merge
+                .input-group
+                  .span.input-group-addon
+                    Cluster Name
+                  %input.form-control.cluster-name{type:'text'}
+                .cluster-clips
+                  - each clip in cluster['clips']
+                    .clip{"data-cid":clip[0]}
+                      = clip[1]
+                .footer
+        .col-xs-6
+          %ul.nav.nav-tabs
+            %li
+              %a.clips-tab.stage.stage-2{href:'#clips', "data-toggle":'tab', disabled: true}
+                Clips
+            %li.active
+              %a.merger-tab{href:'#merger', "data-toggle":'tab'}
+                Merge Clusters
+          .tab-content
+            #clips.clips.tab-pane
+              - each clip in clips
+                .clip.draggable{"data-cid":clip['clips'][0][0]}
+                  = clip['clips'][0][1]
+            #merger.merger.tab-pane.active
+              %h2
+                Drag two similar clusters here to merge
+              %button.btn.btn-danger.merge-btn
+                MERGE
+              %button.btn.btn-success.clear-btn.pull-right
+                CLEAR
+              .placeholder-row
+                .merger-wrapper
+                  .cluster-container
+                  .background
+                    Cluster 1
+                  .merge-placeholder.merge-placeholder1
+              .placeholder-row
+                .merger-wrapper
+                  .cluster-container
+                  .background
+                    Cluster 2
+                  .merge-placeholder.merge-placeholder
+
