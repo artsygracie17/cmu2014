@@ -1,20 +1,6 @@
 [
-  {
-    "clips" : [
-      [
-        785,
-        "You will see the duct tape over the overflow move back and forth as the drain line changes from a pressured to vacuum state.Lift the plunger to allow the clog debris to rise and remove any clumps of hair or other things that have come up."
-      ]
-    ]
-  },
-  {
-    "clips" : [
-      [
-        797,
-        "Your best bet for plunger-resistant clogs is to call an experienced plumbing and drain cleaning professional who can quickly and safely remove the obstruction and get you back in the flow."
-      ]
-    ]
-  },
+  
+
   {
     "clips" : [
       [
@@ -248,18 +234,11 @@
     ]
   },
   {
-    "clips" : [
-      [
-        696,
-        "3. Read some more things and basically they say, “You are not doing it hard enough. Also, plug up that hole you made earlier when you unscrewed the popup drain, don’t you understand how plunging works. Put a wet dishtowel in the hole. Twist it. Plunge."
-      ],
-      [
-        689,
-        "24. Like just plunge a lot. Is this the coolest thing you’ve ever done? Maybe?"
-      ],
+    "clips" : [ 
       [
         669,
-        "21. Okay but actually, Google says, plunging, is the answer. You put your plunger in your bathtub and you plunge the drain. Like, a lot. Just plunge the heck out of it."
+        "<img src='/assets/Control-1.jpg'>" 
+        
       ],
       [
         670,

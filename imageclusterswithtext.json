@@ -1,0 +1,40 @@
+[
+  {
+    "clips" : [
+      [
+        3462,
+        "This is the first picture. Mochi ice cream mochi ice cream. Mochi ice cream mochi ice cream. Here is filler text but in the working interface this should be an explanation of the product. I hope this is long enough.",        
+        "/assets/Control-1.jpg"
+      ]
+    ]
+  },
+  {
+    "clips" : [
+      [
+        3464,
+        "This is the second picture. Mochi ice cream mochi ice cream. Mochi ice cream mochi ice cream. Here is filler text but in the working interface this should be an explanation of the product. I hope this is long enough.",        
+        "/assets/Control-2.jpg"
+      ]
+    ]
+  }, 
+  {
+    "clips" : [
+      [
+        804,
+        "This is the third picture. Mochi ice cream mochi ice cream. Mochi ice cream mochi ice cream. Here is filler text but in the working interface this should be an explanation of the product. I hope this is long enough.",        
+        "/assets/Control-3.jpg"
+      ]
+    ]
+  },
+  {
+    "clips" : [
+      [
+        796,
+        "This is the fourth picture. Mochi ice cream mochi ice cream. Mochi ice cream mochi ice cream. Here is filler text but in the working interface this should be an explanation of the product. I hope this is long enough.",        
+        "/assets/Control-4.jpg"
+      ]
+    ]
+  }
+
+  
+]

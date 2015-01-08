@@ -1,0 +1,162 @@
+.row2
+          .cluster2.stage-1
+            - each cluster in clusters  
+              .cluster2{id: getUUID()}
+                .cluster-clips2
+                  - each clip in cluster['clips']
+                    .row.clip2{"data-cid":clip[0]}
+                      .col-xs-4
+                        .firstStageImages
+                          %img{"src": clip[2]}
+                      .boxed.col-xs-4
+                        .writing
+                          = clip[1]
+                      .col-xs-4
+                        %textarea{cols: '50', rows:'7'}
+                        
+.tab-content
+            #clips.clips.tab-pane
+              - each clip in clips
+                .clip.draggable{"data-cid":clip['clips'][0][0]}
+                  .col-xs-5
+                    %img{"src": clip['clips'][0][2]}
+                  .col-xs-7
+                    .writing2
+                      = clip['clips'][0][1]
+
+
+.stage-5
+        .row.stage-5
+          .instructions.col-xs-12
+            %h2
+              Group these ten images based on their similar structural schemas.
+              
+        /this is the left side
+        .col-xs-6
+          %ul.nav.nav-tabs
+            %li
+              %a.clips-tab.stage.stage-5{href:'#clips', "data-toggle":'tab', disabled: true}
+                Images
+          .tab-content
+            #clips.clips.tab-pane
+              - each cluster in clusters
+                .cluster5{id: getUUID()}
+                  .cluster-clips5
+                    - each clip in cluster['clips']
+                      .clip.draggable{"data-cid":clip[0]}
+                        .col-xs-5
+                          %img{"src": clip[2]}
+                        .col-xs-7
+                          .writing2
+                            = clip[1]
+                  
+        /this is the right side
+        .col-xs-6
+          .pills-container
+            .pills
+              %button.btn.btn-default.btn-xs.scrolltop{type: 'button'}
+                Top
+            %hr
+          .clusters.stage-5
+            /this is the bin with the existing clusters from stage 1
+            /and it seems like it is also apparent in stage 1
+            - each cluster in clusters  
+              .cluster{id: getUUID()}
+                .blah
+                  %span.selector
+                    - each clip in cluster['clips']
+                      %i.fa.fa-circle-o.dot{"data-cid":clip[0]}
+                  %a.show-all{src: '#'}
+                    %i.fa.fa-angle-double-down
+                      Show All
+                .input-group
+                  .span.input-group-addon
+                    Schema Name
+                  %input.form-control.cluster-name{type:'text'}
+                .footer
+                  
+            /this is the creating clusters bin    
+            .cluster.create.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.create
+                .clip{"data-cid":-1}
+                  Drag products here to create a new schema.
+            
+            /this is the trash bin
+            .cluster.trash.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.trash
+                .clip{"data-cid":-1}
+                  Unmatched Bin: drag products that don't match with any others here.
+        .stage-5
+        .row.stage-5
+          .instructions.col-xs-12
+            %h2
+              Group these ten images based on their similar structural schemas.
+              
+        /this is the left side
+        .col-xs-6
+          %ul.nav.nav-tabs
+            %li
+              %a.clips-tab.stage.stage-5{href:'#clips', "data-toggle":'tab', disabled: true}
+                Images
+          .tab-content
+            #clips.clips.tab-pane
+              - each cluster in clusters
+                .cluster5{id: getUUID()}
+                  .cluster-clips5
+                    - each clip in cluster['clips']
+                      .clip.draggable{"data-cid":clip[0]}
+                        .col-xs-5
+                          %img{"src": clip[2]}
+                        .col-xs-7
+                          .writing2
+                            = clip[1]
+                  
+        /this is the right side
+        .col-xs-6
+          .pills-container
+            .pills
+              %button.btn.btn-default.btn-xs.scrolltop{type: 'button'}
+                Top
+            %hr
+          .clusters.stage-5
+            /this is the bin with the existing clusters from stage 1
+            /and it seems like it is also apparent in stage 1
+            - each cluster in clusters  
+              .cluster{id: getUUID()}
+                .blah
+                  %span.selector
+                    - each clip in cluster['clips']
+                      %i.fa.fa-circle-o.dot{"data-cid":clip[0]}
+                  %a.show-all{src: '#'}
+                    %i.fa.fa-angle-double-down
+                      Show All
+                .input-group
+                  .span.input-group-addon
+                    Schema Name
+                  %input.form-control.cluster-name{type:'text'}
+                .footer
+                  
+            /this is the creating clusters bin    
+            .cluster.create.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.create
+                .clip{"data-cid":-1}
+                  Drag products here to create a new schema.
+            
+            /this is the trash bin
+            .cluster.trash.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.trash
+                .clip{"data-cid":-1}
+                  Unmatched Bin: drag products that don't match with any others here.
+        

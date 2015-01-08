@@ -1,10 +1,88 @@
+#mode {
+  display: none;
+}
+#p {
+  font-family: "Helvetica", Times, serif;
+}
+
+/* images for stage 3 answers of trial run */
+.imageOne {position: fixed; top: 200px; left: 100px}
+.imageTwo {position: fixed; top: 200px; left: 270px;}
+.imageFive {position: fixed; top: 200px;; left: 440px}
+
+.imageSix {position: fixed; top: 200px; right: 100px}
+.imageFour {position: fixed; top: 200px; right: 270px;}
+.imageThree {position: fixed; top: 200px; right: 440px;}
+
+.imageSeven {position: fixed; top: 440px; left: 100px;}
+.imageEight {position: fixed; top: 440px; left: 270px;}
+.imageNine {position: fixed; top: 440px; left: 440px;}
+.imageTen {position: fixed; top: 440px; left: 610px;}
+
+
+.imageOne img, .imageTwo img, .imageThree img, .imageFour img, .imageFive img, .imageSix img, .imageSeven img, .imageEight img, .imageNine img, .imageTen img {
+  width: 150px; height: 100px;
+}
+.answerTextBox1, .answerTextBox2, .answerTextBox3 {
+  position: fixed;
+  width: 470px;
+  height: 120px;
+  border: hidden;
+  padding: 5px;
+  padding-right: 0px;
+  min-width: 100px;
+}
+
+.answerTextBox12, .answerTextBox22, .answerTextBox32 {
+  position: fixed;
+  width: 470px;
+  height: 120px;
+  border: hidden;
+  min-width: 100px;
+}
+.answerTextBox1, .answerTextBox12 {top: 310px; left: 100px;}
+.answerTextBox2, .answerTextBox22 {top: 310px; right: 100px;}
+.answerTextBox3, .answerTextBox32 {top: 550px; left: 100px;}
+/*.answerTextBox4, .answerTextBox42 {top: 580px; right: 100px;}
+.answerTextBox5, .answerTextBox52 {top: 890px; left: 200px;}*/
+
+
+
+.firstStageImages img {
+  width: 180px; height: 120px;
+  margin: 5px;
+  padding: 0px;
+}
+.clip3 {
+  padding-top: 10px;
+}
+.clip2, .clip4 {
+  padding-top: 30px;
+  /*text-align: center;*/
+}
+.boxed {
+  width: 370px;
+  height: 120px;
+  border: hidden;
+  padding: 7px;
+  padding-top: 15px;
+  min-width: 100px;
+}
+.writing {text-align: left;}
+.writing2 {padding-top: 10px; cursor: none;}
+
+img {width: 180px; height: 120px; align: left;
+  width: auto;
+  height: auto;
+  max-height: 200px;}
+
 .v-option-manager hr, .v-option-manager h2, .v-option-manager h3 {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
 }
 .v-option-manager .clip {
-  text-align: justify;
-  font-size: 1.3em;
+  /*text-align: justify;
+  font-size: 1.3em;*/
 }
 .v-option-manager .clip span {
   font-size: 1.2em;
@@ -27,7 +105,7 @@
   padding-top: 3px;
 }
 .v-option-manager .seed_tabs .seed {
-  background: #fffff0;
+  background: #fffff0; /* practically white */
   min-height: 92px;
   border-top: solid 0px !important;
   border-left: solid 4px;
@@ -96,7 +174,7 @@
 
 body.v-option-manager, body.v-option-manager-2 {
   height: 100%;
-  overflow: hidden;
+  overflow: auto; /* overflow corresponds to scroll bar */
 }
 
 .v-option-manager-2 h2 {
@@ -111,16 +189,17 @@ body.v-option-manager, body.v-option-manager-2 {
 .v-option-manager-2 body {
   overflow: hidden;
   color: darkgrey;
-  background: #fafafa;
+  background: #fafafa; /* practically white */
 }
+
 .v-option-manager-2 .clips, .v-option-manager-2 .clusters, .v-option-manager-2 .merger, .v-option-manager-2 .showall {
   overflow-y: scroll;
   overflow-x: hidden;
   padding: 5px;
-  padding-bottom: 20px;
+  padding-bottom: 70px !important;
 }
 .v-option-manager-2 .showall .clip {
-  border-bottom: 1px solid darkgrey;
+  border-bottom: 1px solid purple;
   border-top: 0px;
   border-left: 0px;
   border-right: 0px;
@@ -140,47 +219,67 @@ body.v-option-manager, body.v-option-manager-2 {
   border: 1px solid darkgrey;
   padding: 10px;
 }
+/* these are the text boxes for stage 2 */
 .v-option-manager-2 .clip.draggable {
-  background: #fff6cb !important;
-  cursor: move;
+  /*background: #fff6cb !important; /* this is a faint peach color */*/
+  /*text-align: right;*/
+  /*width: 200px;
+  height: 100px;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid purple;*/
+  padding: 5px;
+  border: hidden; 
   overflow: hidden;
+  cursor: move;
+}
+.clip.draggable img {
+  width: 200px; height: 120px;
 }
 .v-option-manager-2 .cluster {
   padding: 10px;
   margin-bottom: 16px;
   background: #fafafa;
-  border: lightgray 2px solid;
+  border: purple 2px solid; /* stage 1 view clip border */
   border-radius: 4px;
 }
+/* this is the "view clip" and merge button in stage 1 */
 .v-option-manager-2 .cluster .blah {
-  color: darkgrey;
+  color: purple;
   font-size: 1.1em;
   margin-bottom: 6px;
-}
+  }
 .v-option-manager-2 .cluster .clip {
   margin-bottom: 0px !important;
 }
 .v-option-manager-2 .cluster.trash {
   background: lightgrey;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 .v-option-manager-2 .cluster.create {
-  background: #d4ebf2;
+  background: #d4ebf2; /* this is a light blue/periwinkle */
   border-radius: 10px;
 }
 .v-option-manager-2 .cluster.trash, .v-option-manager-2 .cluster.create {
   border: 0px black solid;
 }
+/* this is the white space of the trash bin */
 .v-option-manager-2 .cluster.trash .clip, .v-option-manager-2 .cluster.create .clip {
-  min-height: 48px;
-  max-height: 48px;
+  min-height: 48px; 
+  max-height: 200px;
   border: 0px;
 }
-.v-option-manager-2 .cluster.trash .cluster-clips, .v-option-manager-2 .cluster.create .cluster-clips {
+/* I think this is the green stuff underneath */
+.v-option-manager-2 .cluster.trash .cluster-clips, .v-option-manager-2 .cluster.create {
   min-height: 48px;
-  background: #dcf3ae;
+  background: #dcf3ae; /* this is a light green */
+
 }
+/* this is the grey and blue areas of the headers of cluster stage 2 */
 .v-option-manager-2 .cluster.trash .selector, .v-option-manager-2 .cluster.create .selector {
+  background-image: url("/assets/trash_can.jpg");
+  background-size: 1px 1px;
   margin-left: 2px;
   margin-top: 2px;
   margin-bottom: 2px;
@@ -188,7 +287,7 @@ body.v-option-manager, body.v-option-manager-2 {
 }
 .v-option-manager-2 .cluster-clips {
   min-height: 70px;
-  background: #dcf3ae;
+  background: #dcf3ae; /* this is a light green */
 }
 .v-option-manager-2 .selector {
   margin-top: 4px;
@@ -204,8 +303,9 @@ body.v-option-manager, body.v-option-manager-2 {
 }
 .v-option-manager-2 .selector .fa-circle, .v-option-manager-2 .selector .fa-circle-o {
   cursor: pointer;
-  color: darkgray;
+  color: purple; /* these are the bubbles */
 }
+/* this is form the top of the tab menu to the actual content (padding) */
 .v-option-manager-2 .tab-pane {
   padding-top: 20px;
 }
@@ -236,7 +336,6 @@ body.v-option-manager, body.v-option-manager-2 {
 .v-option-manager-2 .merger-wrapper .cluster {
   position: absolute;
   min-height: 140px;
-  width: 100%;
 }
 .v-option-manager-2 .background {
   border-radius: 10px;
@@ -252,10 +351,10 @@ body.v-option-manager, body.v-option-manager-2 {
   z-index: 1;
 }
 .v-option-manager-2 .state-hover {
-  background: rgba(255, 165, 0, 0.6) !important;
+  background: rgba(255, 165, 0, 0.6) !important; /* this is yellow-orange highlight */
 }
 .v-option-manager-2 .state-active {
-  background: rgba(220, 243, 174, 0.6);
+  background: rgba(220, 243, 174, 0.6); /* this is the same light green as hex */
 }
 .v-option-manager-2 .cluster-clips .ui-sortable-placeholder {
   max-height: 0px !important;
@@ -266,7 +365,7 @@ body.v-option-manager, body.v-option-manager-2 {
 }
 .v-option-manager-2 .merge-handle {
   cursor: move;
-  border: 1px solid darkgrey;
+  border: 1px solid;
   padding: 3px;
   border-radius: 4px;
   background: white;

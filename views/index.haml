@@ -15,111 +15,169 @@
     %link{href: "/assets/global.css", rel: "stylesheet"}
     %link{href: "/assets/main.css", rel: "stylesheet"}
     %script{src:'/assets/main.js'}
+
   %body.v-option-manager-2
+    #mode
+      = mode
     #main-container.container-fluid
       .header
         .row
           .title.col-xs-12
+            %br
             %h2
               = title
+              /title is defined in index.js
         .row
-          .col-xs-2
-            %button.btn.btn-success.start-stage.pull-left
-              Start
+          .col-xs-6
+            /if schema names are filled out, continue to next step
             %button.btn.btn-info.next-stage.pull-left
               Continue to Next Step
-          .title.col-xs-8
-            %h2
-              Please help us organize them into groups of different solution types.
-          .col-xs-2
+          .col-xs-6
             %button.btn.btn-danger.restart-hit.pull-right
               Restart HIT
         %hr
-        .row
+        .row.stage-1
           .instructions.col-xs-12
             %span.stage.stage-1
               %h2
-                Step1 of 2. Name existing clusters:
-                Read the clips in the clusters, and name each cluster. If you think two clusters should be merged, drag them to the right and click \"Merge\".
-            %span.stage.stage-2
-              %h2
-                Step2 of 2. Categorize clips:
-                Drag clips into the clusters on the left. Create new clusters if necessary. There might be a number of useless clips that contain little information. Drag them into the trash. 
-        %hr
+                Below are four products and their descriptions. Please summarize the products' purposes and mechanisms to achieve said purposes in one or two sentences.
+        /this will be the real first stage
+        %br
+        .row2
+          .cluster2.stage-1
+            .cluster-clips2
+              - each clip in clips
+                .row{"data-cid":clip['clips'][0][0]}
+                  .col-xs-3
+                    .firstStageImages
+                      %img{"src": clip['clips'][0][2]}
+                  .boxed.col-xs-7
+                    .writing
+                      = clip['clips'][0][1]
+                  .col-xs-2
+                    .clip2
+                      %textarea{cols: '54', rows:'2'}
+      
       .workspace
+        .row.stage-2
+          .instructions.col-xs-12
+            %h2
+              Please classify the products based on their structual similarities.              
+        /this is the left side
+        .col-xs-6
+          %ul.nav.nav-tabs
+            %li
+              %a.clips-tab.stage.stage-2{href:'#clips', "data-toggle":'tab', disabled: true}
+                Images
+          .tab-content
+            #clips.clips.tab-pane
+              - each clip in clips
+                .clip.draggable{"data-cid":clip['clips'][0][0]}
+                  .col-xs-5
+                    %img{"src": clip['clips'][0][2]}
+                  .col-xs-7
+                    .writing2
+                      = clip['clips'][0][1]
+                  
+        /this is the right side
         .col-xs-6
           .pills-container
             .pills
               %button.btn.btn-default.btn-xs.scrolltop{type: 'button'}
                 Top
             %hr
-          .clusters
-            .cluster.trash.stage.stage-2
-              .blah
-                .selector
-                  %i.fa.fa-circle-o.dot{"data-cid":-1}
-              .cluster-clips.trash
-                .clip{"data-cid":-1}
-                  Trash Bin: Drag useless clips here.
-            .cluster.create.stage.stage-2
-              .blah
-                .selector
-                  %i.fa.fa-circle-o.dot{"data-cid":-1}
-              .cluster-clips.create
-                .clip{"data-cid":-1}
-                  Drag clips here to create a new cluster.
-            - each cluster in clusters
+          .clusters.stage-2
+            /this is the bin with the existing clusters from stage 1
+            /and it seems like it is also apparent in stage 1
+            - each cluster in clusters  
               .cluster{id: getUUID()}
                 .blah
-                  %span.blah
-                    View Clip:
                   %span.selector
                     - each clip in cluster['clips']
                       %i.fa.fa-circle-o.dot{"data-cid":clip[0]}
                   %a.show-all{src: '#'}
                     %i.fa.fa-angle-double-down
                       Show All
-                  %i.fa.fa-arrows.merge-handle.pull-right
-                    Merge
                 .input-group
                   .span.input-group-addon
-                    Cluster Name
+                    Schema Name
                   %input.form-control.cluster-name{type:'text'}
-                .cluster-clips
-                  - each clip in cluster['clips']
-                    .clip{"data-cid":clip[0]}
-                      = clip[1]
                 .footer
-        .col-xs-6
-          %ul.nav.nav-tabs
-            %li
-              %a.clips-tab.stage.stage-2{href:'#clips', "data-toggle":'tab', disabled: true}
-                Clips
-            %li.active
-              %a.merger-tab{href:'#merger', "data-toggle":'tab'}
-                Merge Clusters
-          .tab-content
-            #clips.clips.tab-pane
-              - each clip in clips
-                .clip.draggable{"data-cid":clip['clips'][0][0]}
-                  = clip['clips'][0][1]
-            #merger.merger.tab-pane.active
-              %h2
-                Drag two similar clusters here to merge
-              %button.btn.btn-danger.merge-btn
-                MERGE
-              %button.btn.btn-success.clear-btn.pull-right
-                CLEAR
-              .placeholder-row
-                .merger-wrapper
-                  .cluster-container
-                  .background
-                    Cluster 1
-                  .merge-placeholder.merge-placeholder1
-              .placeholder-row
-                .merger-wrapper
-                  .cluster-container
-                  .background
-                    Cluster 2
-                  .merge-placeholder.merge-placeholder
+                  
+            /this is the creating clusters bin    
+            .cluster.create.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.create
+                .clip{"data-cid":-1}
+                  Drag products here to create a new schema.
+            
+            /this is the trash bin
+            .cluster.trash.stage.stage-2
+              .blah
+                .selector
+                  %i.fa.fa-circle-o.dot{"data-cid":-1}
+              .cluster-clips.trash
+                .clip{"data-cid":-1}
+                  Unmatched Bin: drag products that don't match with any others here.
+      
+      .stage-three
+        .row.stage-3
+          .instructions.col-xs-12
+            %h2
+              Here is how the products should have been grouped and why:
+        .imageOne
+          %img{src: "/assets/Control-1.jpg"}
+        .imageTwo
+          %img{src: "/assets/Control-2.jpg"}
+        .imageThree
+          %img{src: "/assets/Control-3.jpg"}
+        .imageFour
+          %img{src: "/assets/Control-4.jpg"}
+        .answerTextBox1
+          %p This is why these two products are structurally similar yay rainbow unicorns. I love mochi ice cream. This is why these two products are structurally similar yay rainbow unicorns. I love mochi ice cream. This is why these two products are structurally similar yay rainbow unicorns. I love mochi ice cream.
+          %hr{noshade: "noshade", size: "4", width: "470px"}
+        .answerTextBox2
+          %p This is why these two products are structurally similar yay rainbow unicorns. I love mochi ice cream. This is why these two products are structurally similar yay rainbow unicorns. I love mochi ice cream. This is why these two products are structurally similar yay rainbow unicorns. I love mochi ice cream. 
+          %hr{noshade: "noshade", size: "4", width: "470px"}
+          
+      .stage-six
+        .imageOne
+          %img{src: "/assets/Control-1.jpg"}
+        .imageTwo
+          %img{src: "/assets/Control-2.jpg"}
+        .imageThree
+          %img{src: "/assets/Control-3.jpg"}
+        .imageFour
+          %img{src: "/assets/Control-4.jpg"}
+        .answerTextBox12
+          .clip3
+            %textarea{cols: '75', rows:'4'}
+        .answerTextBox22
+          .clip3
+            %textarea{cols: '75', rows:'4'}        
+        .imageFive
+          %img{src: "/assets/Schema-1.jpg"}
+        .imageSix
+          %img{src: "/assets/Schema-2.jpg"}
+        .imageSeven
+          %img{src: "/assets/Schema-3.jpg"}
+        .imageEight
+          %img{src: "/assets/Schema-4.jpg"}
+        .answerTextBox32
+          .clip3
+            %textarea{cols: '110', rows:'4'}
+        .imageNine
+          %img{src: "/assets/Control-5.jpg"}
+        .imageTen
+          %img{src: "/assets/Control-6.jpg"}
 
+          
+      
+          
+      
+          
+          
+          
+          
